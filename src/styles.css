@@ -14,22 +14,29 @@ body {
   /* width: 100%; */
   padding: 40px;
   display: flex;
-  gap: 20px;
+  gap: 40px;
+  justify-content: center;
   margin: 0 auto;
 }
 .cat-img {
-  width: 400px;
-  /* height: 300px; */
+  width: 450px;
   object-fit: cover;
 }
-.cat-info {
-  width: 400px;
+.cat-information {
+  width: 450px;
   display: flex;
   flex-direction: column;
 }
+.cat-name {
+  font-size: 32px;
+}
 .span-cat {
-  font-size: 20px;
+  font-size: 26px;
   text-decoration: underline;
+}
+.cat-text {
+  font-size: 22px;
+  line-height: 2rem;
 }
 .error {
   color: red;

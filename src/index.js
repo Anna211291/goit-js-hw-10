@@ -60,7 +60,7 @@ function createMarkupCat(arr) {
     return `
     <div class="cat-card">
   <img class="cat-img" "width="400" src="${url}" alt="${name}" />
-  <div class="cat-info">
+  <div class="cat-information">
     <h1 class="cat-name">${name}</h1>
   <p class="cat-text"><span class="span-cat">Description:</span> ${description}</p>
   <p class="cat-text"><span class="span-cat">Temperament:</span> ${temperament}</p>
