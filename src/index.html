@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="cats">
-      <select class="breed-select hidden" id="cat">
-        <!-- <option value="">--Select bread--</option> -->
-      </select>
-      <p class="loader">Loading data, please wait...</p>
-      <p class="error hidden">
-        Oops! Something went wrong! Try reloading the page!
-      </p>
-      <div class="cat-info"></div>
-    </div>
+    <section class="container">
+      <div class="cats">
+        <select class="breed-select hidden" id="cat">
+          <option data-placeholder="true"></option>
+        </select>
+        <p class="loader">Loading data, please wait...</p>
+        <p class="error hidden">
+          Oops! Something went wrong! Try reloading the page!
+        </p>
+        <div class="cat-info"></div>
+      </div>
+    </section>
     <script src="index.js" type="module"></script>
   </body>
 </html>
-<!-- <span class="loader"></span> -->

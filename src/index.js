@@ -1,9 +1,6 @@
-import axios from "axios";
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 import Notiflix from 'notiflix';
-
-axios.defaults.headers.common["x-api-key"] = "live_nRAbKPGtPy5olGmKf9By3ctpIFYQykaC9MBEH2OF27WPgKQQ6HPlYeHfglM34rrO";
 
 import { fetchBreeds, fetchCatByBreed } from "./cat-api";
 
@@ -14,14 +11,7 @@ const elements = {
     cats: document.querySelector(".cat-info")
 }
 
-// const selectS = new SlimSelect({
-//     select: "#cat",
-//     settings: {
-//         placeholderText: '--Select breed--',
-//     },
-// })
-// elements.selectCat.addEventListener("click", handlerClick)
-elements.selectCat.addEventListener("change", handlerChange)
+elements.selectCat.addEventListener("change", handlerChange);
 
     fetchBreeds()
         .then(data => {
@@ -48,17 +38,20 @@ function handlerChange(evt) {
     let breedId = evt.target.value;
     elements.cats.innerHTML = "";
     elements.loader.classList.remove("hidden");
+    elements.error.classList.add("hidden");
     fetchCatByBreed(breedId)
         .then(cat => {
-            elements.error.classList.add("hidden");
+            // elements.error.classList.add("hidden");
             elements.cats.innerHTML = createMarkupCat(cat);
-            // console.log(cat)
         })
         .catch(err => {
             console.log(err);
             elements.error.classList.remove("hidden");
         })
-        .finally(() => { elements.loader.classList.add("hidden") });
+        .finally(() => {
+            elements.loader.classList.add("hidden");
+     }
+        );
 }
 
 function createMarkupCat(arr) {
@@ -69,8 +62,8 @@ function createMarkupCat(arr) {
   <img class="cat-img" "width="400" src="${url}" alt="${name}" />
   <div class="cat-info">
     <h1 class="cat-name">${name}</h1>
-  <p class="cat-text">Description: ${description}</p>
-  <p class="cat-text">Temperament: ${temperament}</p>
+  <p class="cat-text"><span class="span-cat">Description:</span> ${description}</p>
+  <p class="cat-text"><span class="span-cat">Temperament:</span> ${temperament}</p>
 </div>
 </div>`
 }
