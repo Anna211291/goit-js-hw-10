@@ -1,10 +1,9 @@
 import axios from "axios";
 axios.defaults.headers.common["x-api-key"] = "live_nRAbKPGtPy5olGmKf9By3ctpIFYQykaC9MBEH2OF27WPgKQQ6HPlYeHfglM34rrO";
 
- const BASE_URL = "https://api.thecatapi.com/v1";
+const BASE_URL = "https://api.thecatapi.com/v1";
 const END_POINT = "/breeds";
-  const END_POINT_CAT = "/images/search";
-//   const API_KEY = "live_nRAbKPGtPy5olGmKf9By3ctpIFYQykaC9MBEH2OF27WPgKQQ6HPlYeHfglM34rrO";
+const END_POINT_CAT = "/images/search";
 
 function fetchBreeds() {
     return axios.get(`${BASE_URL}${END_POINT}`)
